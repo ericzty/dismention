@@ -2,11 +2,9 @@ FROM golang:1.20
 
 WORKDIR /app
 
-COPY go.mod ./
-RUN go mod download
+COPY . .
 
-COPY *.go ./
-
+RUN go mod tidy
 RUN go build -o /dismention
 
 EXPOSE 8080
