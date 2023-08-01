@@ -1,7 +1,14 @@
 FROM golang:1.20
 
-COPY . .
+WORKDIR /app
 
-RUN go build -o dismention
+COPY go.mod ./
+RUN go mod download
 
-CMD ["dismention"]
+COPY *.go ./
+
+RUN go build -o /dismention
+
+EXPOSE 8080
+
+CMD [ "/dismention" ]
