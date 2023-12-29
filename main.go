@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -121,8 +122,8 @@ func webhook(fromUrl string, toUrl string) error {
 	if err != nil {
 		return err
 	}
-	if resp.StatusCode != 200 {
-		return fmt.Errorf("invalid status code")
+	if resp.StatusCode != 201 {
+		return fmt.Errorf("invalid status code, received" + strconv.Itoa(resp.StatusCode))
 	}
 
 	return nil
