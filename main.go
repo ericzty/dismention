@@ -54,7 +54,7 @@ func webmentionHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if tgtUrl.Host != "ericz.me" {
+	if tgtUrl.Host != "ezrizhu.com" {
 		log.Info().Str("host", tgtUrl.Host).Msg("invalid host")
 		w.WriteHeader(http.StatusBadRequest)
 		return

@@ -20,5 +20,5 @@ jobs:
       with:
         push: true
         tags: |
-          ghcr.io/ericzty/dismention:${{ github.sha }}
-          ghcr.io/ericzty/dismention:latest
+          ghcr.io/ezrizhu/dismention:${{ github.sha }}
+          ghcr.io/ezrizhu/dismention:latest
