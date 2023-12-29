@@ -122,7 +122,7 @@ func webhook(fromUrl string, toUrl string) error {
 	if err != nil {
 		return err
 	}
-	if resp.StatusCode != 201 {
+	if resp.StatusCode != 204 {
 		return fmt.Errorf("invalid status code, received" + strconv.Itoa(resp.StatusCode))
 	}
 
